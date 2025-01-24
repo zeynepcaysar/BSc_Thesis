@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pain Intensity Prediction</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Pain Intensity Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="trigger_lack_physical_activity">If lack of physical activity as a trigger (0 or 1):</label>
+                <input type="number" id="trigger_lack_physical_activity" name="trigger_lack_physical_activity" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="trigger_physical_activity">If physical activity as a trigger (0 or 1):</label>
+                <input type="number" id="trigger_physical_activity" name="trigger_physical_activity" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="trigger_poor_sleep">If poor sleep as a trigger (0 or 1):</label>
+                <input type="number" id="trigger_poor_sleep" name="trigger_poor_sleep" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="trigger_stress">If stress as a trigger (0 or 1):</label>
+                <input type="number" id="trigger_stress" name="trigger_stress" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="reported_anxiety">Report if anxiety (0 or 1):</label>
+                <input type="number" id="reported_anxiety" name="reported_anxiety" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="reported_depression">Report if depression (0 or 1):</label>
+                <input type="number" id="reported_depression" name="reported_depression" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label for="sleep_duration_hours">Sleep duration of the migraine day (hours):</label>
+                <input type="number" id="sleep_duration_hours" name="sleep_duration_hours" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="sleep_duration_past_7_days">Average sleep duration past 7 days (hours):</label>
+                <input type="number" id="sleep_duration_past_7_days" name="sleep_duration_past_7_days" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="migraine_attacks_past7days">Number of migraine attacks past 7 days:</label>
+                <input type="number" id="migraine_attacks_past7days" name="migraine_attacks_past7days" required>
+            </div>
+            <div class="form-group">
+                <label for="mean_migraine_duration_past7days">Average migraine duration past 7 days (hours):</label>
+                <input type="number" id="mean_migraine_duration_past7days" name="mean_migraine_duration_past7days" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="total_physical_activity">Total physical activity today (minutes):</label>
+                <input type="number" id="total_physical_activity" name="total_physical_activity" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <button type="submit" class="submit-button">Predict</button>
+        </form>
+        {% if error %}
+            <div class="error">
+                {{ error }}
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

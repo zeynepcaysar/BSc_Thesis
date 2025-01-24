@@ -1,0 +1,6 @@
+data/
+results/
+.ipynb_checkpoints
+.DS_Store
+test.py
+test.ipynb

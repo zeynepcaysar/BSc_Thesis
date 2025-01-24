@@ -1,0 +1,35 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migraine Prediction Results</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Triggers Image -->
+        <div class="image-container">
+            <img src="static/images/triggers.png" alt="Triggers">
+            <p><strong>Triggers</strong></p>
+        </div>
+
+        <!-- Prediction Result Form -->
+        <div class="result-container">
+            <h1>Prediction Result</h1>
+            <p><strong>Pain Intensity Class:</strong> {{ prediction }}</p>
+            <p><strong>Probability:</strong> {{ probability }}%</p>
+            <p><strong>Recommendation:</strong></p>
+            <p>{{ recommendation }}</p>
+            <a href="/" class="back-button">Go Back</a>
+        </div>
+
+        <!-- Reliefs Image -->
+        <div class="image-container">
+            <img src="static/images/reliefs.png" alt="Reliefs">
+            <p><strong>Reliefs</strong></p>
+        </div>
+    </div>
+</body>
+</html>
